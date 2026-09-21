@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TURistrIA - Your Digital Reception</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f9fc;
+            color: #173c4d;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #008bb5, #58c5d5);
+            color: white;
+            padding: 45px 20px;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-top: 12px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+
+        .language {
+            margin: 25px 0;
+        }
+
+        select {
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #a5cbd7;
+        }
+
+        .welcome {
+            margin: 35px 0;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 15px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            background: #e3f6fa;
+        }
+
+        .icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            background: #e1f0f4;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>TURistrIA</h1>
+    <div class="subtitle">Your Digital Reception in Istria</div>
+</header>
+
+<main>
+
+    <div class="language">
+        <label for="language">Odaberite jezik / Choose your language</label>
+        <br><br>
+
+        <select id="language" onchange="changeLanguage()">
+            <option value="hr">Hrvatski</option>
+            <option value="it">Italiano</option>
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="sl">Slovenščina</option>
+        </select>
+    </div>
+
+    <div class="welcome">
+        <h2 id="welcome">Dobrodošli u Istru!</h2>
+        <p id="description">
+            Otkrijte najljepše što Istra nudi.
+            Vaš digitalni recepcionar dostupan je 24/7.
+        </p>
+    </div>
+
+    <div class="menu">
+
+        <div class="card" onclick="openService('weather')">
+            <div class="icon">☀️</div>
+            <span id="weather">Vrijeme</span>
+        </div>
+
+        <div class="card" onclick="openService('food')">
+            <div class="icon">🍽️</div>
+            <span id="food">Restorani</span>
+        </div>
+
+        <div class="card" onclick="openService('beaches')">
+            <div class="icon">🏖️</div>
+            <span id="beaches">Plaže</span>
+        </div>
+
+        <div class="card" onclick="openService('activities')">
+            <div class="icon">🚴</div>
+            <span id="activities">Aktivnosti</span>
+        </div>
+
+        <div class="card" onclick="openService('events')">
+            <div class="icon">🎭</div>
+            <span id="events">Događanja</span>
+        </div>
+
+        <div class="card" onclick="openService('culture')">
+            <div class="icon">🏛️</div>
+            <span id="culture">Kultura</span>
+        </div>
+
+        <div class="card" onclick="openService('local')">
+            <div class="icon">🍷</div>
+            <span id="local">Vino i maslinovo ulje</span>
+        </div>
+
+        <div class="card" onclick="openService('assistant')">
+            <div class="icon">💬</div>
+            <span id="assistant">Digitalni recepcionar</span>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    TURistrIA © 2026<br>
+    Your Digital Reception in Istria
+</footer>
+
+<script>
+
+const translations = {
+
+    hr: {
+        welcome: "Dobrodošli u Istru!",
+        description: "Otkrijte najljepše što Istra nudi. Vaš digitalni recepcionar dostupan je 24/7.",
+        weather: "Vrijeme",
+        food: "Restorani",
+        beaches: "Plaže",
+        activities: "Aktivnosti",
+        events: "Događanja",
+        culture: "Kultura",
+        local: "Vino i maslinovo ulje",
+        assistant: "Digitalni recepcionar"
+    },
+
+    it: {
+        welcome: "Benvenuti in Istria!",
+        description: "Scoprite il meglio dell'Istria. La vostra reception digitale è disponibile 24 ore su 24.",
+        weather: "Meteo",
+        food: "Ristoranti",
+        beaches: "Spiagge",
+        activities: "Attività",
+        events: "Eventi",
+        culture: "Cultura",
+        local: "Vino e olio d'oliva",
+        assistant: "Reception digitale"
+    },
+
+    en: {
+        welcome: "Welcome to Istria!",
+        description: "Discover the best of Istria. Your digital reception is available 24/7.",
+        weather: "Weather",
+        food: "Restaurants",
+        beaches: "Beaches",
+        activities: "Activities",
+        events: "Events",
+        culture: "Culture",
+        local: "Wine and olive oil",
+        assistant: "Digital receptionist"
+    },
+
+    de: {
+        welcome: "Willkommen in Istrien!",
+        description: "Entdecken Sie das Beste von Istrien. Ihre digitale Rezeption ist rund um die Uhr verfügbar.",
+        weather: "Wetter",
+        food: "Restaurants",
+        beaches: "Strände",
+        activities: "Aktivitäten",
+        events: "Veranstaltungen",
+        culture: "Kultur",
+        local: "Wein und Olivenöl",
+        assistant: "Digitale Rezeption"
+    },
+
+    sl: {
+        welcome: "Dobrodošli v Istri!",
+        description: "Odkrijte najlepše, kar ponuja Istra. Vaša digitalna recepcija je na voljo 24 ur na dan.",
+        weather: "Vreme",
+        food: "Restavracije",
+        beaches: "Plaže",
+        activities: "Aktivnosti",
+        events: "Dogodki",
+        culture: "Kultura",
+        local: "Vino in oljčno olje",
+        assistant: "Digitalna recepcija"
+    }
+
+};
+
+function changeLanguage() {
+
+    const language = document.getElementById("language").value;
+
+    const text = translations[language];
+
+    document.documentElement.lang = language;
+
+    for (const key in text) {
+
+        document.getElementById(key).textContent = text[key];
+
+    }
+
+}
+
+function openService(service) {
+
+    const language = document.getElementById("language").value;
+
+    const messages = {
+        hr: "Ova usluga uskoro će biti dostupna.",
+        it: "Questo servizio sarà presto disponibile.",
+        en: "This service will be available soon.",
+        de: "Dieser Service wird bald verfügbar sein.",
+        sl: "Ta storitev bo kmalu na voljo."
+    };
+
+    alert(messages[language]);
+
+}
+
+</script>
+
+</body>
+</html>
