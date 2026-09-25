@@ -1,0 +1,2 @@
+TURistrIA Pilot 3.2.3 — versione di prova.
+Intermezzo FOOD più compatto, non modale e senza oscuramento; hover desktop e chiusura automatica con breve tolleranza, tap su smartphone. Le altre macroicone mostrano anteprime compatte (servizi non ancora sviluppati). Bandiera slovena: proporzioni 2:1 e stemma presente, verificare visivamente anche sul proprio dispositivo. Dati dei locali e immagini restano parzialmente dimostrativi. GitHub non modificato.

@@ -1,281 +1,200 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0876aa"><title>TURistrIA — Your Digital Reception</title>
+<style>
+:root{--navy:#123d65;--blue:#087db5;--aqua:#eaf9fd;--line:#cce5ef;--muted:#57738a}*{box-sizing:border-box}body{margin:0;background:linear-gradient(155deg,#f9fdff,#e9f7fc 70%,#f7fff9);font:16px/1.45 system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--navy)}button,select{font:inherit}button{cursor:pointer}.wrap{max-width:1500px;margin:auto;padding:20px 24px 12px}.top{display:grid;grid-template-columns:1fr 2fr 1fr;gap:18px;align-items:center;padding:10px 0 20px;border-bottom:1px solid var(--line)}.language label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:5px}.language select{background:white;color:var(--navy);padding:10px;border:1px solid var(--line);border-radius:12px;min-width:125px}.brand{display:flex;justify-content:center;align-items:center;gap:12px}.brand img{width:73px;height:89px;object-fit:contain}.brand strong{display:block;font-size:clamp(1.8rem,3vw,3rem);letter-spacing:-.05em;line-height:1.1}.brand strong span{color:#11a5d0}.brand small{font-size:.84rem;letter-spacing:.07em}.host{text-align:right;font-size:.92rem}.host strong{display:block;font-size:1.08rem}.host span{display:block;color:var(--muted)}main{display:grid;grid-template-columns:minmax(255px,1.08fr) minmax(440px,2.35fr) minmax(255px,1.08fr);gap:20px;margin:26px 0}.panel{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 10px 35px #124b7312;padding:20px}.panel h2{font-size:1.15rem;margin:0 0 10px}.panel p{margin:8px 0}.weather-head,.reception-head{text-align:center}.feature-icon{width: min(100%,190px);border-radius:24px;display:block;margin:5px auto 12px}.feature-icon-btn{background:none;border:0;padding:0;display:block;margin:auto}.feature-icon-btn:focus-visible,.service:focus-visible{outline:3px solid #ffb43b;outline-offset:4px}.temp{font-size:2.7rem;font-weight:750;line-height:1.1}.muted{color:var(--muted)}.advice{background:#eaf8f5;border-left:4px solid #22a5a2;padding:12px;border-radius:10px;margin-top:15px}.advice strong{display:block;margin-bottom:5px}.detail-button,.primary{background:var(--navy);border:0;border-radius:13px;color:white;padding:12px 14px;font-weight:650;width:100%;margin-top:14px}.detail-button:hover,.primary:hover{background:#086f9c}.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-content:center}.service{border:1px solid var(--line);background:#fff;border-radius:20px;padding:12px 8px;box-shadow:0 8px 25px #124b730e;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-height:176px;color:var(--navy)}.service img{width:100%;max-width:135px;aspect-ratio:1;object-fit:contain;border-radius:19px}.service span{text-align:center;font-weight:750;font-size:.78rem;line-height:1.2}.service:hover{transform:translateY(-2px);box-shadow:0 12px 26px #124b7322}.reception{display:flex;flex-direction:column;justify-content:center}.reception .primary{margin-top:24px}.footer{border-top:1px solid var(--line);padding:18px 0;text-align:center;font-size:.85rem;color:var(--muted)}dialog{width:min(780px,calc(100vw - 28px));max-height:85vh;overflow:auto;border:1px solid var(--line);border-radius:20px;padding:24px;color:var(--navy);box-shadow:0 20px 90px #123d6555}dialog::backdrop{background:#062d4c9c}.modal-head{display:flex;justify-content:space-between;gap:20px;align-items:center}.close{border:0;background:#e9f5f9;border-radius:10px;padding:7px 12px;font-size:1.2rem}.hours{width:100%;border-collapse:collapse;margin-top:12px;font-size:.9rem}.hours th,.hours td{padding:10px 7px;text-align:left;border-bottom:1px solid var(--line)}.hours th{position:sticky;top:0;background:white}.status{font-size:.83rem;color:var(--muted)}@media(max-width:1100px){main{grid-template-columns:1fr 1fr}.services{grid-column:1/-1;grid-row:2}.reception{grid-column:2;grid-row:1}.weather{grid-column:1;grid-row:1}}@media(max-width:680px){.wrap{padding:12px}.top{grid-template-columns:1fr 1fr;gap:12px}.brand{grid-column:1/-1;grid-row:1;justify-content:center}.brand img{width:56px;height:70px}.brand strong{font-size:2rem}.language{grid-column:1;grid-row:2}.host{grid-column:2;grid-row:2}main{display:flex;flex-direction:column;gap:14px;margin:16px 0}.weather{order:1}.services{order:2;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.reception{order:3}.service{min-height:155px}.service img{max-width:120px}.feature-icon{max-width:180px}.hours{font-size:.78rem}.hours th,.hours td{padding:8px 4px}}
 
-    <title>TURistrIA - Your Digital Reception</title>
+/* TURistrIA 3.0 — disposizione approvata: respiro, avorio, azzurro e cobalto. */
+:root{--navy:#123e69;--blue:#1265a2;--line:#bdd5e7;--muted:#57758e}
+body{min-height:100vh;background:radial-gradient(ellipse at 9% 11%,#c7e6f7 0%,transparent 38%),radial-gradient(ellipse at 93% 83%,#bfd9f1 0%,transparent 37%),linear-gradient(118deg,#eef8ff 0%,#fffdf5 53%,#eaf5ff 100%);}
+.wrap{max-width:1600px;min-height:100vh;display:flex;flex-direction:column;padding:24px clamp(20px,3vw,52px) 14px}
+.top{grid-template-columns:minmax(175px,1fr) minmax(300px,2fr) minmax(175px,1fr);padding:10px 0 24px;border-bottom:1px solid #9bbfdb90}
+.brand img{width:75px;height:92px}.brand strong{font-weight:800}.brand small{letter-spacing:.025em}
+main{flex:1;display:grid;grid-template-columns:minmax(220px,1fr) minmax(450px,2.7fr) minmax(220px,1fr);gap:clamp(20px,2.5vw,42px);margin:clamp(32px,5vh,76px) 0 42px;align-items:stretch;min-height:480px}
+.panel{background:linear-gradient(160deg,#fffef9cc,#eaf7ff99);border:0;border-radius:0;box-shadow:none;padding:23px 17px 24px}
+.weather{align-self:start;border-top:3px solid #1b5181;border-right:3px solid #1b5181;border-radius:0 2px 0 0;min-height:360px}
+.reception{align-self:end;border-left:3px solid #1b5181;border-bottom:3px solid #1b5181;border-radius:0 0 0 2px;min-height:330px;justify-content:center}
+.panel h2{font-size:1.07rem;letter-spacing:.12em;font-weight:750;margin:0 0 10px}
+.feature-icon{width:min(100%,158px);border-radius:26px;margin:8px auto 15px}
+.weather .feature-icon,.reception .feature-icon{width:min(100%,175px)}
+.temp{font-size:clamp(2rem,3vw,2.8rem)}
+.advice{background:#fffdf6a6;border-left:2px solid #2b8cb2;padding:12px 11px;margin-top:20px;font-size:.94rem}
+.detail-button,.primary{background:#154f81;border-radius:11px;padding:11px;font-size:.9rem}
+.services{grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2.3vw,35px) clamp(10px,1.8vw,28px);align-content:center;align-items:center;padding:clamp(14px,2vw,32px) 0}
+.service{background:transparent;border:0;box-shadow:none;border-radius:22px;min-height:0;padding:4px;gap:11px;transition:transform .15s ease}
+.service:hover{transform:translateY(-4px);box-shadow:none;background:#fffef885}
+.service img{width:100%;max-width:155px;border-radius:22px;filter:drop-shadow(0 7px 10px #164f761c)}
+.service span{font-size:clamp(.69rem,.9vw,.88rem);letter-spacing:.025em;line-height:1.25}
+.footer{border-top:1px solid #9bbfdb90;margin-top:auto;padding:18px 0 7px}
+@media(max-width:1150px){main{grid-template-columns:minmax(190px,1fr) minmax(360px,2fr);gap:24px}.weather{grid-column:1;grid-row:1}.services{grid-column:2;grid-row:1/3}.reception{grid-column:1;grid-row:2}.service img{max-width:135px}}
+@media(max-width:750px){.wrap{padding:13px 14px}.top{grid-template-columns:1fr 1fr;gap:12px;padding-bottom:18px}.brand{grid-column:1/-1;grid-row:1}.brand img{width:58px;height:72px}.brand strong{font-size:2rem}.language{grid-column:1;grid-row:2}.host{grid-column:2;grid-row:2}main{display:flex;flex-direction:column;gap:30px;margin:27px 0}.weather{order:1;align-self:stretch;min-height:0}.services{order:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 13px;padding:0 8px}.service img{max-width:150px}.service span{font-size:.79rem}.reception{order:3;align-self:stretch;min-height:0}.feature-icon{max-width:175px}.hours{font-size:.78rem}.hours th,.hours td{padding:8px 4px}}
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+/* TURistrIA 3.1 — piccoli selettori lingua e pannelli delineati */
+.top{grid-template-columns:minmax(260px,1.1fr) minmax(280px,1.5fr) minmax(165px,.9fr);gap:14px}
+.language{display:flex;flex-wrap:wrap;align-content:center;align-items:center;gap:5px 7px;max-width:320px}
+.flag{width:38px;height:34px;display:grid;place-items:center;border:1px solid transparent;border-radius:9px;background:transparent;font-size:23px;line-height:1;padding:2px;transition:background .15s,border-color .15s}
+.flag:hover{background:#ffffffad}.flag[aria-pressed="true"]{border-color:#175a9b;background:#fffef9;box-shadow:0 0 0 1px #175a9b38}.flag:focus-visible{outline:3px solid #e7a52e;outline-offset:2px}
+.weather,.reception{border:1.5px solid #7eaccb;border-radius:19px;background:linear-gradient(155deg,#fffef9d9,#e6f4ffd1);box-shadow:0 10px 35px #0c51810b}
+.weather{border-top:3px solid #185486}.reception{border-bottom:3px solid #185486}
+.reception{justify-content:space-between;gap:14px}.reception-form{margin-top:10px}.reception-form label{display:block;font-size:.84rem;font-weight:650;margin-bottom:7px}.question-row{display:flex;gap:7px;align-items:stretch}.question-row input{min-width:0;flex:1;width:100%;border:1px solid #9fc5dd;border-radius:10px;padding:11px 10px;background:#fffefa;color:#123e69;font:inherit;font-size:.87rem}.question-row .primary{width:auto;margin:0;padding:10px 12px;white-space:nowrap}.reception-form .status{margin-bottom:0}
+@media(max-width:1150px){.top{grid-template-columns:1fr 1.2fr 1fr}.language{max-width:265px}.flag{width:37px;height:34px}}
+@media(max-width:750px){.top{grid-template-columns:1fr 1fr}.language{grid-column:1/-1;grid-row:2;max-width:none;justify-content:center}.host{grid-column:1/-1;grid-row:3;text-align:center}.flag{width:39px;height:36px}.brand{grid-column:1/-1;grid-row:1}}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f2f9fc;
-            color: #173c4d;
-            text-align: center;
-        }
+/* TURistrIA Pilot 3.2.3 — responsive FOOD, flag grid and balanced panels */
+.language{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;max-width:455px;width:100%}.flag{position:relative;width:100%;height:47px;background:#fffef9;border:1px solid #bdd5e7;border-radius:10px;box-shadow:0 3px 9px #124b7315;overflow:hidden}.flag-picture{display:block;width:100%;height:100%;object-fit:cover;border-radius:6px}.flag-code{z-index:1}.flag-code{position:absolute;bottom:2px;right:3px;background:#123e69;color:white;border-radius:4px;padding:1px 3px;font-size:10px;font-weight:800;line-height:1.2}.flag[aria-pressed=true]{outline:2px solid #136fa4;outline-offset:1px}.top{grid-template-columns:minmax(360px,1.3fr) minmax(250px,1.5fr) minmax(155px,.8fr)}main{align-items:stretch}.weather,.reception{align-self:stretch;min-height:420px;height:100%}.food-view[hidden]{display:none!important}.food-view{flex:1;padding:20px 0 35px}.food-topline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:15px}.back-link{border:1px solid #a7cce2;background:#fffef9;color:#12446d;border-radius:11px;padding:11px 17px;font-weight:700}.back-link:hover{background:#e3f3fb}.food-layout{display:grid;grid-template-columns:minmax(0,3.5fr) minmax(260px,1fr);gap:24px}.food-aside{display:flex;flex-direction:column;gap:18px}.food-aside .weather,.food-aside .reception{min-height:0;height:auto}.food-hero{padding:25px clamp(17px,3vw,35px);border-radius:20px;background:linear-gradient(105deg,#13456f,#127ea5);color:white}.food-hero h1{font-size:clamp(1.7rem,3vw,2.6rem);line-height:1.15;margin:7px 0}.food-hero p{max-width:800px;line-height:1.55;margin-bottom:0}.food-kicker{font-size:.75rem;letter-spacing:.14em;font-weight:800;opacity:.83}.pilot-notice{padding:10px 14px;background:#fff8e6;border-radius:10px;font-size:.84rem;color:#6b4d16}.food-cards{display:flex;flex-direction:column;gap:13px}.food-card{display:grid;grid-template-columns:minmax(130px,1fr) minmax(100px,1fr) minmax(180px,2fr) minmax(110px,.9fr) minmax(120px,1fr) minmax(105px,.8fr);align-items:center;gap:12px;padding:13px;background:#fffefa;border:1px solid #c9dfec;border-radius:15px;box-shadow:0 5px 14px #154f8110}.food-card h3{font-size:1rem;margin:0 0 6px}.food-card p{margin:0;font-size:.84rem}.food-card small{color:#55758d}.food-photo{min-height:98px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;background:linear-gradient(130deg,#e0eff9,#fdf6e7);font-size:2.5rem}.food-photo span{font-size:.7rem;color:#57738a}.food-card a,.food-card .no-action{display:block;border-radius:9px;text-align:center;padding:10px 6px;font-size:.8rem;font-weight:700;text-decoration:none;overflow-wrap:anywhere}.food-card a{color:#fff;background:#155987}.food-card a:hover{background:#0d79a6}.food-card .no-action{background:#edf2f5;color:#627989}.distance{text-align:center;font-weight:700;font-size:.85rem}.distance small{display:block;font-weight:400}.bottom-back{margin-top:20px}.food-picker{width:min(580px,calc(100vw - 22px));border:1px solid #b9d6e8;border-radius:20px;padding:23px;background:#f9fdff}.picker-head{display:flex;align-items:start;justify-content:space-between;gap:10px}.picker-head h2{margin:7px 0 16px}.food-options{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.food-options button{background:#fff;border:1px solid #b7d8e8;border-radius:15px;min-height:110px;color:#123e69;font-size:2rem;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px}.food-options button span{font-size:1rem;font-weight:800}.food-options button:hover,.food-options button:focus-visible{background:#dff3fb;outline:2px solid #2472a2}.food-picker::backdrop{background:#092f4c9c}body.food-open main{display:none!important}
+@media(max-width:1150px){.top{grid-template-columns:minmax(275px,1fr) minmax(240px,1fr) minmax(150px,.7fr)}.language{max-width:none}.food-layout{grid-template-columns:minmax(0,1fr)}.food-aside{display:grid;grid-template-columns:1fr 1fr}.food-card{grid-template-columns:minmax(120px,1fr) minmax(105px,1fr) minmax(160px,2fr) minmax(90px,.8fr) minmax(100px,.9fr);gap:8px}.distance{grid-column:1/-1;text-align:right}}
+@media(max-width:750px){.top{grid-template-columns:1fr 1fr}.language{grid-column:1/-1;grid-row:2;max-width:560px;margin:auto}.flag{height:44px}.host{grid-column:1/-1;grid-row:3}.weather,.reception{height:auto;min-height:0}.food-view{padding-top:12px}.food-aside{display:flex}.food-card{grid-template-columns:100px minmax(0,1fr);gap:9px;padding:12px}.food-card .food-title{grid-column:1/-1}.food-photo{grid-column:1;grid-row:2;min-height:100px}.food-description{grid-column:2;grid-row:2}.food-card .food-map,.food-card .food-phone{grid-row:3;grid-column:auto}.distance{grid-column:1/-1;text-align:left}.food-hero{padding:21px 16px}.food-options{grid-template-columns:1fr}.food-options button{min-height:73px;flex-direction:row;font-size:1.5rem}.food-options button span{font-size:1rem}.food-picker{padding:16px}.food-card a,.food-card .no-action{min-height:48px;display:flex;align-items:center;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.service,.flag{transition:none}}
 
-        header {
-            background: linear-gradient(135deg, #008bb5, #58c5d5);
-            color: white;
-            padding: 45px 20px;
-        }
+/* Pilot 3.2.3: mobile-first, persistent category tabs, visible offline flags */
+.food-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0 0 17px}
+.food-tab{min-height:49px;border:1px solid #a7cce2;border-radius:12px;background:#fffef9;color:#123e69;font-weight:750;padding:10px 7px}
+.food-tab[aria-current="page"]{background:#155987;color:white;border-color:#155987}
+.food-aside .reception{position:sticky;top:16px;align-self:start}
+@media(max-width:750px){.food-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.food-tab{min-height:52px}.food-aside .reception{position:static}.flag-code{font-size:9px}}
+@media(max-width:400px){.language{gap:4px}.flag{height:37px}.flag-code{font-size:8px;padding:1px 2px}}
 
-        h1 {
-            font-size: 42px;
-            margin: 0;
-        }
+/* 3.2.2: photographic FOOD category artwork with accessible, live translated typography */
+.flag-picture{object-fit:contain;width:100%;height:100%;padding:3px 1px 8px;filter:drop-shadow(0 1px 1px #0a274522)}
+.food-picker{width:min(960px,calc(100vw - 24px));max-height:min(94vh,900px);overflow-y:auto}
+.food-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.food-options button{position:relative;display:block;padding:0;min-height:0;aspect-ratio:1.5;border:2px solid #a8d9ef;overflow:hidden;border-radius:18px;background:#0d3e70;box-shadow:0 7px 17px #0c41631c;transition:transform .17s,box-shadow .17s}
+.food-options button img{display:block;width:100%;height:100%;object-fit:cover}
+.food-options button span{position:absolute;left:6%;right:6%;bottom:3%;min-height:18%;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:Arial,'Helvetica Neue',sans-serif;font-size:clamp(1rem,2.3vw,1.7rem);font-weight:800;letter-spacing:.025em;line-height:1.05;text-shadow:0 2px 4px #082c4d}
+.food-options button:hover,.food-options button:focus-visible{transform:translateY(-3px);box-shadow:0 9px 24px #0c416344;outline:3px solid #2e9ed1;outline-offset:2px;background:#0d3e70}
+.food-photo{padding:0;overflow:hidden;position:relative;min-height:108px;background:#e0eff9}
+.food-photo img{width:100%;height:108px;object-fit:cover;display:block}
+.food-photo span{position:absolute;bottom:0;left:0;right:0;background:#0c375dcb;color:#fff;padding:3px;font-size:.65rem;text-align:center}
+@media(max-width:750px){.food-picker{width:calc(100vw - 18px);padding:13px}.food-options{grid-template-columns:1fr;gap:10px}.food-options button{width:100%;aspect-ratio:2.4;min-height:105px}.food-options button img{object-position:center 45%}.food-options button span{font-size:clamp(1.15rem,5vw,1.5rem);bottom:2%;min-height:20%}}
+@media(prefers-reduced-motion:reduce){.food-options button{transition:none}}
 
-        .subtitle {
-            font-size: 18px;
-            margin-top: 12px;
-        }
-
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 20px;
-        }
-
-        .language {
-            margin: 25px 0;
-        }
-
-        select {
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 8px;
-            border: 1px solid #a5cbd7;
-        }
-
-        .welcome {
-            margin: 35px 0;
-        }
-
-        .menu {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 18px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px 15px;
-            border-radius: 14px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            font-size: 18px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            background: #e3f6fa;
-        }
-
-        .icon {
-            font-size: 38px;
-            margin-bottom: 12px;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 25px;
-            background: #e1f0f4;
-            font-size: 14px;
-        }
-    </style>
+/* Pilot 3.2.3 — compact non-modal, pointer-friendly macro-icon previews */
+.food-picker{position:fixed;inset:auto;margin:0;width:min(535px,calc(100vw - 24px));max-height:min(80vh,650px);padding:13px;border-radius:17px;box-shadow:0 14px 45px #103e6d35;z-index:1000}
+.food-picker::backdrop{background:transparent}
+.food-picker .picker-head h2{font-size:1rem;margin:2px 0 9px}
+.food-picker .food-kicker{font-size:.66rem}
+.food-picker .food-options{gap:8px}
+.food-picker .food-options button{aspect-ratio:2.05;border-radius:12px}
+.food-picker .food-options button span{font-size:clamp(.86rem,1.45vw,1.12rem)}
+.service-preview{position:fixed;z-index:999;max-width:min(290px,calc(100vw - 24px));background:#fffefa;border:1px solid #b9d6e8;border-radius:15px;padding:16px 20px;box-shadow:0 14px 45px #103e6d35;color:#123d65}
+.service-preview[hidden]{display:none}
+.service-preview strong{display:block;margin-bottom:5px}
+.service-preview p{margin:0;font-size:.88rem}
+@media(hover:hover) and (pointer:fine){.food-picker #closeFoodPicker{display:none}}
+@media(max-width:750px), (hover:none){.food-picker{left:50%!important;top:50%!important;transform:translate(-50%,-50%);width:min(430px,calc(100vw - 22px));max-height:85vh;padding:13px}.food-picker .food-options{grid-template-columns:1fr;gap:8px}.food-picker .food-options button{aspect-ratio:3.05;min-height:75px}.food-picker .food-options button span{font-size:1rem}.service-preview{left:50%!important;top:50%!important;transform:translate(-50%,-50%)}}
+</style>
 </head>
-
-<body>
-
-<header>
-    <h1>TURistrIA</h1>
-    <div class="subtitle">Your Digital Reception in Istria</div>
+<body><div class="wrap">
+<header class="top">
+<nav class="language" aria-label="Odabir jezika / Selezione lingua" id="languageFlags"></nav>
+<div class="brand"><img src="assets/turistria-pin.png" alt="TURistrIA"><div><strong>TURistr<span>IA</span></strong><small>your digital reception in Istria</small></div></div>
+<div class="host"><strong id="hostName">Vaš domaćin / Your host</strong><span id="hostInfo">Umag · Istra</span><span id="hostContact"></span></div>
 </header>
-
 <main>
-
-    <div class="language">
-        <label for="language">Odaberite jezik / Choose your language</label>
-        <br><br>
-
-        <select id="language" onchange="changeLanguage()">
-            <option value="hr">Hrvatski</option>
-            <option value="it">Italiano</option>
-            <option value="en">English</option>
-            <option value="de">Deutsch</option>
-            <option value="sl">Slovenščina</option>
-        </select>
-    </div>
-
-    <div class="welcome">
-        <h2 id="welcome">Dobrodošli u Istru!</h2>
-        <p id="description">
-            Otkrijte najljepše što Istra nudi.
-            Vaš digitalni recepcionar dostupan je 24/7.
-        </p>
-    </div>
-
-    <div class="menu">
-
-        <div class="card" onclick="openService('weather')">
-            <div class="icon">☀️</div>
-            <span id="weather">Vrijeme</span>
-        </div>
-
-        <div class="card" onclick="openService('food')">
-            <div class="icon">🍽️</div>
-            <span id="food">Restorani</span>
-        </div>
-
-        <div class="card" onclick="openService('beaches')">
-            <div class="icon">🏖️</div>
-            <span id="beaches">Plaže</span>
-        </div>
-
-        <div class="card" onclick="openService('activities')">
-            <div class="icon">🚴</div>
-            <span id="activities">Aktivnosti</span>
-        </div>
-
-        <div class="card" onclick="openService('events')">
-            <div class="icon">🎭</div>
-            <span id="events">Događanja</span>
-        </div>
-
-        <div class="card" onclick="openService('culture')">
-            <div class="icon">🏛️</div>
-            <span id="culture">Kultura</span>
-        </div>
-
-        <div class="card" onclick="openService('local')">
-            <div class="icon">🍷</div>
-            <span id="local">Vino i maslinovo ulje</span>
-        </div>
-
-        <div class="card" onclick="openService('assistant')">
-            <div class="icon">💬</div>
-            <span id="assistant">Digitalni recepcionar</span>
-        </div>
-
-    </div>
-
+<section class="panel weather" aria-labelledby="weatherTitle"><div class="weather-head"><h2 id="weatherTitle" data-i18n="weather">VRIJEME · UMAG</h2><button class="feature-icon-btn" id="weatherIcon" aria-label="48-hour weather"><img class="feature-icon" src="assets/weather.png" alt="Meteo"></button><div id="weatherNow"><div class="muted" data-i18n="loading">Učitavanje vremenske prognoze…</div></div></div><div class="advice"><strong data-i18n="adviceTitle">TURistrIA savjet</strong><span id="weatherAdvice" data-i18n="loading">Učitavanje vremenske prognoze…</span></div><p class="status" id="weatherStatus"></p><button class="detail-button" id="weatherDetails" data-i18n="hoursButton">Prognoza za sljedećih 48 sati →</button></section>
+<section class="services" id="services" aria-label="TURistrIA services"></section>
+<section class="panel reception" aria-labelledby="receptionTitle"><div class="reception-head"><h2 id="receptionTitle" data-i18n="reception">DIGITALNA RECEPCIJA</h2><button class="feature-icon-btn" id="receptionIcon" aria-label="Digital receptionist"><img class="feature-icon" src="assets/reception.png" alt="Digital receptionist"></button><p data-i18n="receptionCopy">Trebate savjet, ideju za izlet ili pomoć tijekom boravka? Vaša digitalna recepcija ovdje je za vas.</p></div><form class="reception-form" id="receptionForm"><label for="receptionQuestion" data-i18n="questionLabel">Vaše pitanje</label><div class="question-row"><input id="receptionQuestion" type="text" maxlength="500" data-i18n-placeholder="questionPlaceholder" placeholder="Napišite svoje pitanje…" autocomplete="off"><button class="primary" type="submit" data-i18n="send">Pošalji →</button></div><p class="status" data-i18n="chatPreview">AI odgovori bit će dostupni uskoro.</p></form></section>
 </main>
-
-<footer>
-    TURistrIA © 2026<br>
-    Your Digital Reception in Istria
-</footer>
-
+<section id="foodView" class="food-view" hidden aria-label="FOOD — TURistrIA">
+ <div class="food-topline"><button class="back-link" id="backReception">← Reception TURistrIA</button><button class="back-link" id="backCategories">☰ FOOD · Categorie</button></div>
+ <nav id="foodTabs" class="food-tabs" aria-label="FOOD categories"></nav><div class="food-layout"><div class="food-content"><div class="food-hero"><div class="food-kicker">TURistrIA · FOOD · UMAG & DINTORNI</div><h1 id="foodHeading">RISTORANTI DI PESCE</h1><p id="foodIntro"></p></div><p class="pilot-notice" id="foodPilotNotice">PILOT 3.2.2 · Elenco dimostrativo in verifica. Le schede senza dati completi non mostrano contatti inventati.</p><div id="foodCards" class="food-cards"></div><button class="back-link bottom-back" id="backFoodBottom">← Torna alle categorie FOOD</button></div><aside id="foodAside" class="food-aside"></aside></div>
+</section>
+<div id="servicePreview" class="service-preview" hidden role="status"></div><dialog id="foodPicker" class="food-picker" aria-labelledby="foodPickerTitle"><div class="picker-head"><div><div class="food-kicker">TURistrIA · FOOD</div><h2 id="foodPickerTitle">Cosa ti piacerebbe mangiare?</h2></div><button class="close" id="closeFoodPicker" aria-label="Chiudi">×</button></div><div class="food-options"><button data-category="fish" aria-label="PESCE"><img src="assets/food-fish-art.jpg" alt="" loading="lazy"><span>PESCE</span></button><button data-category="meat" aria-label="CARNE & GRILL"><img src="assets/food-meat-art.jpg" alt="" loading="lazy"><span>CARNE & GRILL</span></button><button data-category="pizza" aria-label="PIZZERIE"><img src="assets/food-pizza-art.jpg" alt="" loading="lazy"><span>PIZZERIE</span></button><button data-category="fast" aria-label="FAST FOOD"><img src="assets/food-fast-art.jpg" alt="" loading="lazy"><span>FAST FOOD</span></button></div></dialog><footer class="footer">TURistrIA © 2026 · Your Digital Reception in Istria</footer>
+</div>
+<dialog id="modal"><div class="modal-head"><h2 id="modalTitle"></h2><button class="close" id="closeModal" aria-label="Close">✕</button></div><div id="modalBody"></div></dialog>
 <script>
+/* TURistrIA pilot v3.1: static GitHub Pages site. No API keys are stored in this file. */
+const HOST={name:'Vaš domaćin / Your host',info:'Umag · Istra',contact:''}; // Change these fields for the accommodation.
+const serviceList=[['sport','sport.png'],['food','food.png'],['bars','beach-bars.png'],['beaches','beaches.png'],['activities','activities.png'],['events','events.png'],['culture','culture.png'],['wine','wine-oil.png']];
+const T={
+hr:{language:'Jezik / Lingua',weather:'VRIJEME · UMAG',loading:'Učitavanje vremenske prognoze…',adviceTitle:'TURistrIA savjet',hoursButton:'Prognoza za sljedećih 48 sati →',reception:'DIGITALNA RECEPCIJA',receptionCopy:'Trebate savjet, ideju za izlet ili pomoć tijekom boravka? Vaša digitalna recepcija ovdje je za vas.',ask:'Pitajte TURistrIA →',soon:'Usluga će uskoro biti dostupna.',sport:'SPORT',food:'HRANA I PIĆE',bars:'BEACH BAROVI',beaches:'PLAŽE',activities:'AKTIVNOSTI',events:'DOGAĐANJA',culture:'KULTURA',wine:'VINO I MASLINOVO ULJE',details:'Vremenska prognoza · sljedećih 48 sati',time:'Vrijeme',condition:'Uvjeti',temp:'°C',rain:'Kiša %',wind:'Vjetar km/h',sun:'Ugodno vrijeme za aktivnosti na otvorenom. Provjerite satnu prognozu prije polaska.',rainAdvice:'Moguća je kiša tijekom sljedećih sati. Razmislite o aktivnostima u zatvorenom i pratite prognozu.',windAdvice:'Očekuje se pojačan vjetar. Budite oprezni pri aktivnostima na moru.',unknown:'Trenutačno nema dostupnih podataka. Pokušajte ponovno kasnije.',updated:'Ažurirano',region:'Podaci za Umag · šire područje u pripremi',clear:'Vedro',partly:'Djelomično oblačno',cloud:'Oblačno',fog:'Magla',drizzle:'Rosulja',rainy:'Kiša',snow:'Snijeg',storm:'Grmljavina'},
+it:{language:'Lingua',weather:'METEO · UMAGO',loading:'Caricamento meteo…',adviceTitle:'Il consiglio TURistrIA',hoursButton:'Previsioni delle prossime 48 ore →',reception:'RECEPTION DIGITALE',receptionCopy:'Cerchi un consiglio, un’idea per un’escursione o aiuto durante il soggiorno? La tua reception digitale è qui per te.',ask:'Chiedi a TURistrIA →',soon:'Il servizio sarà presto disponibile.',sport:'SPORT',food:'FOOD',bars:'BEACH BARS',beaches:'SPIAGGE',activities:'ATTIVITÀ',events:'EVENTI',culture:'CULTURA',wine:'VINO E OLIO',details:'Previsioni meteo · prossime 48 ore',time:'Ora',condition:'Condizioni',temp:'°C',rain:'Pioggia %',wind:'Vento km/h',sun:'Condizioni favorevoli per attività all’aperto. Controlla le previsioni orarie prima di partire.',rainAdvice:'Possibili precipitazioni nelle prossime ore. Valuta attività al coperto e segui gli aggiornamenti.',windAdvice:'Previsto vento sostenuto. Presta attenzione alle attività in mare.',unknown:'Dati meteo non disponibili. Riprova più tardi.',updated:'Aggiornato',region:'Dati per Umago · area più ampia in preparazione',clear:'Sereno',partly:'Parzialmente nuvoloso',cloud:'Nuvoloso',fog:'Nebbia',drizzle:'Pioviggine',rainy:'Pioggia',snow:'Neve',storm:'Temporale'},
+en:{language:'Language',weather:'WEATHER · UMAG',loading:'Loading weather…',adviceTitle:'TURistrIA tip',hoursButton:'Next 48 hours →',reception:'DIGITAL RECEPTION',receptionCopy:'Need local advice, trip ideas or help during your stay? Your digital reception is here for you.',ask:'Ask TURistrIA →',soon:'This service will be available soon.',sport:'SPORT',food:'FOOD & DRINK',bars:'BEACH BARS',beaches:'BEACHES',activities:'ACTIVITIES',events:'EVENTS',culture:'CULTURE',wine:'WINE & OLIVE OIL',details:'Weather forecast · next 48 hours',time:'Time',condition:'Conditions',temp:'°C',rain:'Rain %',wind:'Wind km/h',sun:'Good conditions for outdoor activities. Check the hourly forecast before heading out.',rainAdvice:'Rain is possible in the coming hours. Consider indoor activities and check updates.',windAdvice:'Strong winds are forecast. Take care with activities at sea.',unknown:'Weather data unavailable. Please try again later.',updated:'Updated',region:'Umag data · wider area coming later',clear:'Clear',partly:'Partly cloudy',cloud:'Cloudy',fog:'Fog',drizzle:'Drizzle',rainy:'Rain',snow:'Snow',storm:'Thunderstorm'},
+de:{language:'Sprache',weather:'WETTER · UMAG',loading:'Wetterdaten werden geladen…',adviceTitle:'TURistrIA Tipp',hoursButton:'Vorhersage für 48 Stunden →',reception:'DIGITALE REZEPTION',receptionCopy:'Brauchen Sie Tipps, Ausflugsideen oder Hilfe während Ihres Aufenthalts? Ihre digitale Rezeption ist für Sie da.',ask:'TURistrIA fragen →',soon:'Dieser Service ist bald verfügbar.',sport:'SPORT',food:'ESSEN & TRINKEN',bars:'BEACHBARS',beaches:'STRÄNDE',activities:'AKTIVITÄTEN',events:'VERANSTALTUNGEN',culture:'KULTUR',wine:'WEIN & OLIVENÖL',details:'Wettervorhersage · nächste 48 Stunden',time:'Uhrzeit',condition:'Wetter',temp:'°C',rain:'Regen %',wind:'Wind km/h',sun:'Gute Bedingungen für Aktivitäten im Freien. Prüfen Sie vor dem Start die stündliche Vorhersage.',rainAdvice:'In den nächsten Stunden ist Regen möglich. Planen Sie auch Aktivitäten drinnen ein.',windAdvice:'Stärkerer Wind wird erwartet. Vorsicht bei Aktivitäten auf dem Meer.',unknown:'Wetterdaten nicht verfügbar. Bitte später erneut versuchen.',updated:'Aktualisiert',region:'Daten für Umag · weitere Region in Vorbereitung',clear:'Klar',partly:'Teilweise bewölkt',cloud:'Bewölkt',fog:'Nebel',drizzle:'Nieselregen',rainy:'Regen',snow:'Schnee',storm:'Gewitter'}};
+Object.assign(T,{"hr":{"language":"Jezik","weather":"VRIJEME · UMAG","loading":"Učitavanje vremenske prognoze…","adviceTitle":"TURistrIA savjet","hoursButton":"Prognoza za sljedećih 48 sati →","reception":"DIGITALNA RECEPCIJA","receptionCopy":"Trebate savjet, ideju za izlet ili pomoć tijekom boravka? Vaša digitalna recepcija ovdje je za vas.","ask":"Pitajte TURistrIA →","soon":"Usluga će uskoro biti dostupna.","sport":"SPORT","food":"HRANA I PIĆE","bars":"BEACH BAROVI","beaches":"PLAŽE","activities":"AKTIVNOSTI","events":"DOGAĐANJA","culture":"KULTURA","wine":"VINO I MASLINOVO ULJE","details":"Vremenska prognoza · sljedećih 48 sati","time":"Vrijeme","condition":"Uvjeti","temp":"°C","rain":"Kiša %","wind":"Vjetar km/h","sun":"Ugodno vrijeme za aktivnosti na otvorenom. Provjerite satnu prognozu prije polaska.","rainAdvice":"Moguća je kiša tijekom sljedećih sati. Razmislite o aktivnostima u zatvorenom i pratite prognozu.","windAdvice":"Očekuje se pojačan vjetar. Budite oprezni pri aktivnostima na moru.","unknown":"Trenutačno nema dostupnih podataka. Pokušajte ponovno kasnije.","updated":"Ažurirano","region":"Podaci za Umag · šire područje u pripremi","clear":"Vedro","partly":"Djelomično oblačno","cloud":"Oblačno","fog":"Magla","drizzle":"Rosulja","rainy":"Kiša","snow":"Snijeg","storm":"Grmljavina","questionLabel":"Vaše pitanje","questionPlaceholder":"Napišite svoje pitanje…","send":"Pošalji →","chatPreview":"AI odgovori bit će dostupni uskoro."},"it":{"language":"Lingua","weather":"METEO · UMAGO","loading":"Caricamento meteo…","adviceTitle":"Il consiglio TURistrIA","hoursButton":"Previsioni delle prossime 48 ore →","reception":"RECEPTION DIGITALE","receptionCopy":"Cerchi un consiglio, un’idea per un’escursione o aiuto durante il soggiorno? La tua reception digitale è qui per te.","ask":"Chiedi a TURistrIA →","soon":"Il servizio sarà presto disponibile.","sport":"SPORT","food":"FOOD","bars":"BEACH BARS","beaches":"SPIAGGE","activities":"ATTIVITÀ","events":"EVENTI","culture":"CULTURA","wine":"VINO E OLIO","details":"Previsioni meteo · prossime 48 ore","time":"Ora","condition":"Condizioni","temp":"°C","rain":"Pioggia %","wind":"Vento km/h","sun":"Condizioni favorevoli per attività all’aperto. Controlla le previsioni orarie prima di partire.","rainAdvice":"Possibili precipitazioni nelle prossime ore. Valuta attività al coperto e segui gli aggiornamenti.","windAdvice":"Previsto vento sostenuto. Presta attenzione alle attività in mare.","unknown":"Dati meteo non disponibili. Riprova più tardi.","updated":"Aggiornato","region":"Dati per Umago · area più ampia in preparazione","clear":"Sereno","partly":"Parzialmente nuvoloso","cloud":"Nuvoloso","fog":"Nebbia","drizzle":"Pioviggine","rainy":"Pioggia","snow":"Neve","storm":"Temporale","questionLabel":"La tua domanda","questionPlaceholder":"Scrivi la tua domanda…","send":"Invia →","chatPreview":"Le risposte AI saranno disponibili presto."},"sl":{"language":"Jezik","weather":"VREME · UMAG","loading":"Nalaganje vremenske napovedi…","adviceTitle":"Nasvet TURistrIA","hoursButton":"Napoved za naslednjih 48 ur →","reception":"DIGITALNA RECEPCIJA","receptionCopy":"Potrebujete nasvet, idejo za izlet ali pomoč med bivanjem? Vaša digitalna recepcija je tukaj za vas.","ask":"Vprašajte TURistrIA →","soon":"Storitev bo kmalu na voljo.","sport":"ŠPORT","food":"HRANA IN PIJAČA","bars":"BARI NA PLAŽI","beaches":"PLAŽE","activities":"AKTIVNOSTI","events":"DOGODKI","culture":"KULTURA","wine":"VINO IN OLJČNO OLJE","details":"Vremenska napoved · naslednjih 48 ur","time":"Čas","condition":"Razmere","temp":"°C","rain":"Dež %","wind":"Veter km/h","sun":"Ugodno vreme za dejavnosti na prostem. Pred odhodom preverite urno napoved.","rainAdvice":"V naslednjih urah je možen dež. Razmislite o dejavnostih v zaprtih prostorih.","windAdvice":"Napovedan je močnejši veter. Bodite previdni pri dejavnostih na morju.","unknown":"Vremenski podatki trenutno niso na voljo. Poskusite pozneje.","updated":"Posodobljeno","region":"Podatki za Umag · širše območje v pripravi","clear":"Jasno","partly":"Delno oblačno","cloud":"Oblačno","fog":"Megla","drizzle":"Rosenje","rainy":"Dež","snow":"Sneg","storm":"Nevihta","questionLabel":"Vaše vprašanje","questionPlaceholder":"Napišite svoje vprašanje…","send":"Pošlji →","chatPreview":"Odgovori AI bodo kmalu na voljo."},"de":{"language":"Sprache","weather":"WETTER · UMAG","loading":"Wetterdaten werden geladen…","adviceTitle":"TURistrIA Tipp","hoursButton":"Vorhersage für 48 Stunden →","reception":"DIGITALE REZEPTION","receptionCopy":"Brauchen Sie Tipps, Ausflugsideen oder Hilfe während Ihres Aufenthalts? Ihre digitale Rezeption ist für Sie da.","ask":"TURistrIA fragen →","soon":"Dieser Service ist bald verfügbar.","sport":"SPORT","food":"ESSEN & TRINKEN","bars":"BEACHBARS","beaches":"STRÄNDE","activities":"AKTIVITÄTEN","events":"VERANSTALTUNGEN","culture":"KULTUR","wine":"WEIN & OLIVENÖL","details":"Wettervorhersage · nächste 48 Stunden","time":"Uhrzeit","condition":"Wetter","temp":"°C","rain":"Regen %","wind":"Wind km/h","sun":"Gute Bedingungen für Aktivitäten im Freien. Prüfen Sie vor dem Start die stündliche Vorhersage.","rainAdvice":"In den nächsten Stunden ist Regen möglich. Planen Sie auch Aktivitäten drinnen ein.","windAdvice":"Stärkerer Wind wird erwartet. Vorsicht bei Aktivitäten auf dem Meer.","unknown":"Wetterdaten nicht verfügbar. Bitte später erneut versuchen.","updated":"Aktualisiert","region":"Daten für Umag · weitere Region in Vorbereitung","clear":"Klar","partly":"Teilweise bewölkt","cloud":"Bewölkt","fog":"Nebel","drizzle":"Nieselregen","rainy":"Regen","snow":"Schnee","storm":"Gewitter","questionLabel":"Ihre Frage","questionPlaceholder":"Schreiben Sie Ihre Frage…","send":"Senden →","chatPreview":"KI-Antworten sind bald verfügbar."},"cs":{"language":"Jazyk","weather":"POČASÍ · UMAG","loading":"Načítání předpovědi počasí…","adviceTitle":"Tip TURistrIA","hoursButton":"Předpověď na příštích 48 hodin →","reception":"DIGITÁLNÍ RECEPCE","receptionCopy":"Potřebujete radu, tip na výlet nebo pomoc během pobytu? Vaše digitální recepce je tu pro vás.","ask":"Zeptejte se TURistrIA →","soon":"Služba bude brzy dostupná.","sport":"SPORT","food":"JÍDLO A PITÍ","bars":"PLÁŽOVÉ BARY","beaches":"PLÁŽE","activities":"AKTIVITY","events":"UDÁLOSTI","culture":"KULTURA","wine":"VÍNO A OLIVOVÝ OLEJ","details":"Předpověď počasí · příštích 48 hodin","time":"Čas","condition":"Podmínky","temp":"°C","rain":"Déšť %","wind":"Vítr km/h","sun":"Příznivé počasí pro venkovní aktivity. Před odchodem zkontrolujte hodinovou předpověď.","rainAdvice":"V příštích hodinách může pršet. Zvažte aktivity uvnitř a sledujte předpověď.","windAdvice":"Očekává se silnější vítr. Při aktivitách na moři buďte opatrní.","unknown":"Údaje o počasí nejsou dostupné. Zkuste to později.","updated":"Aktualizováno","region":"Údaje pro Umag · širší oblast připravujeme","clear":"Jasno","partly":"Polojasno","cloud":"Zataženo","fog":"Mlha","drizzle":"Mrholení","rainy":"Déšť","snow":"Sníh","storm":"Bouřka","questionLabel":"Váš dotaz","questionPlaceholder":"Napište svůj dotaz…","send":"Odeslat →","chatPreview":"Odpovědi AI budou brzy dostupné."},"pl":{"language":"Język","weather":"POGODA · UMAG","loading":"Ładowanie prognozy pogody…","adviceTitle":"Porada TURistrIA","hoursButton":"Prognoza na kolejne 48 godzin →","reception":"RECEPCJA CYFROWA","receptionCopy":"Potrzebujesz porady, pomysłu na wycieczkę lub pomocy podczas pobytu? Twoja cyfrowa recepcja jest do dyspozycji.","ask":"Zapytaj TURistrIA →","soon":"Usługa będzie wkrótce dostępna.","sport":"SPORT","food":"JEDZENIE I NAPOJE","bars":"BARY PLAŻOWE","beaches":"PLAŻE","activities":"AKTYWNOŚCI","events":"WYDARZENIA","culture":"KULTURA","wine":"WINO I OLIWA","details":"Prognoza pogody · kolejne 48 godzin","time":"Godzina","condition":"Warunki","temp":"°C","rain":"Deszcz %","wind":"Wiatr km/h","sun":"Dobre warunki do aktywności na świeżym powietrzu. Sprawdź prognozę godzinową przed wyjściem.","rainAdvice":"W najbliższych godzinach możliwy jest deszcz. Rozważ atrakcje pod dachem.","windAdvice":"Prognozowany jest silniejszy wiatr. Zachowaj ostrożność na morzu.","unknown":"Dane pogodowe są niedostępne. Spróbuj ponownie później.","updated":"Aktualizacja","region":"Dane dla Umagu · szerszy obszar w przygotowaniu","clear":"Bezchmurnie","partly":"Częściowe zachmurzenie","cloud":"Pochmurno","fog":"Mgła","drizzle":"Mżawka","rainy":"Deszcz","snow":"Śnieg","storm":"Burza","questionLabel":"Twoje pytanie","questionPlaceholder":"Wpisz pytanie…","send":"Wyślij →","chatPreview":"Odpowiedzi AI będą wkrótce dostępne."},"sk":{"language":"Jazyk","weather":"POČASIE · UMAG","loading":"Načítava sa predpoveď počasia…","adviceTitle":"Tip TURistrIA","hoursButton":"Predpoveď na nasledujúcich 48 hodín →","reception":"DIGITÁLNA RECEPCIA","receptionCopy":"Potrebujete radu, tip na výlet alebo pomoc počas pobytu? Vaša digitálna recepcia je tu pre vás.","ask":"Opýtajte sa TURistrIA →","soon":"Služba bude čoskoro dostupná.","sport":"ŠPORT","food":"JEDLO A NÁPOJE","bars":"PLÁŽOVÉ BARY","beaches":"PLÁŽE","activities":"AKTIVITY","events":"PODUJATIA","culture":"KULTÚRA","wine":"VÍNO A OLIVOVÝ OLEJ","details":"Predpoveď počasia · nasledujúcich 48 hodín","time":"Čas","condition":"Podmienky","temp":"°C","rain":"Dážď %","wind":"Vietor km/h","sun":"Priaznivé počasie na aktivity vonku. Pred odchodom si pozrite hodinovú predpoveď.","rainAdvice":"V najbližších hodinách môže pršať. Zvážte aktivity v interiéri.","windAdvice":"Očakáva sa silnejší vietor. Pri aktivitách na mori buďte opatrní.","unknown":"Údaje o počasí nie sú dostupné. Skúste to neskôr.","updated":"Aktualizované","region":"Údaje pre Umag · širšia oblasť sa pripravuje","clear":"Jasno","partly":"Polooblačno","cloud":"Oblačno","fog":"Hmla","drizzle":"Mrholenie","rainy":"Dážď","snow":"Sneh","storm":"Búrka","questionLabel":"Vaša otázka","questionPlaceholder":"Napíšte svoju otázku…","send":"Odoslať →","chatPreview":"Odpovede AI budú čoskoro dostupné."},"hu":{"language":"Nyelv","weather":"IDŐJÁRÁS · UMAG","loading":"Időjárás betöltése…","adviceTitle":"TURistrIA tipp","hoursButton":"Előrejelzés a következő 48 órára →","reception":"DIGITÁLIS RECEPCIÓ","receptionCopy":"Tanácsra, kirándulási ötletre vagy segítségre van szüksége? Digitális recepciónk rendelkezésére áll.","ask":"Kérdezze a TURistrIA-t →","soon":"A szolgáltatás hamarosan elérhető.","sport":"SPORT","food":"ÉTEL ÉS ITAL","bars":"STRANDBÁROK","beaches":"STRANDOK","activities":"PROGRAMOK","events":"ESEMÉNYEK","culture":"KULTÚRA","wine":"BOR ÉS OLÍVAOLAJ","details":"Időjárás-előrejelzés · következő 48 óra","time":"Idő","condition":"Időjárás","temp":"°C","rain":"Eső %","wind":"Szél km/h","sun":"Kedvező idő a szabadtéri programokhoz. Indulás előtt ellenőrizze az óránkénti előrejelzést.","rainAdvice":"A következő órákban eső lehetséges. Fontolja meg a beltéri programokat.","windAdvice":"Erősebb szél várható. Legyen óvatos a tengeri programok során.","unknown":"Az időjárási adatok nem érhetők el. Próbálja újra később.","updated":"Frissítve","region":"Umag adatai · a tágabb térség előkészítés alatt","clear":"Derült","partly":"Részben felhős","cloud":"Felhős","fog":"Köd","drizzle":"Szitálás","rainy":"Eső","snow":"Hó","storm":"Zivatar","questionLabel":"Az Ön kérdése","questionPlaceholder":"Írja be kérdését…","send":"Küldés →","chatPreview":"Az AI-válaszok hamarosan elérhetők."},"fr":{"language":"Langue","weather":"MÉTÉO · UMAG","loading":"Chargement de la météo…","adviceTitle":"Le conseil TURistrIA","hoursButton":"Prévisions des prochaines 48 heures →","reception":"RÉCEPTION NUMÉRIQUE","receptionCopy":"Besoin d’un conseil, d’une idée d’excursion ou d’aide pendant votre séjour ? Votre réception numérique est à votre service.","ask":"Demander à TURistrIA →","soon":"Ce service sera bientôt disponible.","sport":"SPORT","food":"RESTAURATION","bars":"BARS DE PLAGE","beaches":"PLAGES","activities":"ACTIVITÉS","events":"ÉVÉNEMENTS","culture":"CULTURE","wine":"VIN ET HUILE D’OLIVE","details":"Prévisions météo · prochaines 48 heures","time":"Heure","condition":"Conditions","temp":"°C","rain":"Pluie %","wind":"Vent km/h","sun":"Conditions favorables aux activités de plein air. Consultez les prévisions horaires avant de partir.","rainAdvice":"De la pluie est possible dans les prochaines heures. Envisagez des activités à l’intérieur.","windAdvice":"Un vent plus fort est prévu. Soyez prudent lors des activités en mer.","unknown":"Données météo indisponibles. Réessayez plus tard.","updated":"Mis à jour","region":"Données pour Umag · zone élargie en préparation","clear":"Dégagé","partly":"Partiellement nuageux","cloud":"Nuageux","fog":"Brouillard","drizzle":"Bruine","rainy":"Pluie","snow":"Neige","storm":"Orage","questionLabel":"Votre question","questionPlaceholder":"Écrivez votre question…","send":"Envoyer →","chatPreview":"Les réponses IA seront bientôt disponibles."},"es":{"language":"Idioma","weather":"TIEMPO · UMAG","loading":"Cargando el pronóstico…","adviceTitle":"Consejo TURistrIA","hoursButton":"Pronóstico para las próximas 48 horas →","reception":"RECEPCIÓN DIGITAL","receptionCopy":"¿Necesitas consejos, ideas para excursiones o ayuda durante tu estancia? Tu recepción digital está aquí para ayudarte.","ask":"Pregunta a TURistrIA →","soon":"El servicio estará disponible próximamente.","sport":"DEPORTE","food":"COMIDA Y BEBIDA","bars":"BARES DE PLAYA","beaches":"PLAYAS","activities":"ACTIVIDADES","events":"EVENTOS","culture":"CULTURA","wine":"VINO Y ACEITE DE OLIVA","details":"Pronóstico del tiempo · próximas 48 horas","time":"Hora","condition":"Condiciones","temp":"°C","rain":"Lluvia %","wind":"Viento km/h","sun":"Buenas condiciones para actividades al aire libre. Consulta el pronóstico por horas antes de salir.","rainAdvice":"Puede llover en las próximas horas. Considera actividades en interiores.","windAdvice":"Se prevén vientos fuertes. Ten cuidado con las actividades en el mar.","unknown":"Datos meteorológicos no disponibles. Inténtalo más tarde.","updated":"Actualizado","region":"Datos de Umag · zona ampliada en preparación","clear":"Despejado","partly":"Parcialmente nublado","cloud":"Nublado","fog":"Niebla","drizzle":"Llovizna","rainy":"Lluvia","snow":"Nieve","storm":"Tormenta","questionLabel":"Tu pregunta","questionPlaceholder":"Escribe tu pregunta…","send":"Enviar →","chatPreview":"Las respuestas de IA estarán disponibles pronto."}});
+T.us={...T.en};T.gb={...T.en};T.ch={...T.de,language:'Sprache · Schweiz',reception:'DIGITALE REZEPTION',food:'ESSEN & TRINKEN'};T.at={...T.de,language:'Sprache · Österreich',reception:'DIGITALE REZEPTION',food:'ESSEN & TRINKEN'};let lang='hr', forecast=null;
+const $=id=>document.getElementById(id), tr=k=>T[lang]?.[k]||T.hr[k]||k;
+const flags=[['hr','Hrvatski'],['it','Italiano'],['sl','Slovenščina'],['de','Deutsch'],['cs','Čeština'],['pl','Polski'],['sk','Slovenčina'],['hu','Magyar'],['fr','Français'],['es','Español'],['ch','Deutsch (Schweiz)'],['at','Deutsch (Österreich)'],['us','English (US)'],['gb','English (UK)']];
+function renderFlags(){const box=$('languageFlags');box.replaceChildren();for(const [code,name] of flags){const b=document.createElement('button');b.type='button';b.className='flag';const pic=document.createElement('img');pic.className='flag-picture';pic.src='assets/flag-'+(code==='gb'?'gb':code==='us'?'us':code)+'.png';pic.alt='';const tag=document.createElement('span');tag.className='flag-code';tag.textContent=code==='gb'?'ENG':code.toUpperCase();b.append(pic,tag);b.title=name;b.setAttribute('aria-label',name);b.setAttribute('aria-pressed',String(lang===code));b.onclick=()=>{lang=code;applyLang()};box.append(b)}}
+function iconText(code){if(code===0)return ['☀️','clear'];if(code<=2)return ['🌤️','partly'];if(code===3)return ['☁️','cloud'];if(code<=48)return ['🌫️','fog'];if(code<=57)return ['🌦️','drizzle'];if(code<=67||code===80||code===81||code===82)return ['🌧️','rainy'];if(code<=77||code===85||code===86)return ['❄️','snow'];if(code>=95)return ['⛈️','storm'];return ['🌤️','partly']}
+function showModal(title,body){$('modalTitle').textContent=title;$('modalBody').replaceChildren();if(typeof body==='string'){$('modalBody').textContent=body}else $('modalBody').append(body);$('modal').showModal()}
+$('closeModal').onclick=()=>$('modal').close();$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').close()};
+function renderServices(){let box=$('services');box.replaceChildren();for(const [key,file] of serviceList){let b=document.createElement('button');b.className='service';let im=document.createElement('img');im.src='assets/'+file;im.alt='';let label=document.createElement('span');label.textContent=tr(key);b.append(im,label);b.onclick=()=>key==='food'?openFoodPicker(b):openServicePreview(key,b);b.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover) and (pointer:fine)').matches){if(key==='food')openFoodPicker(b);else openServicePreview(key,b)}});b.addEventListener('mouseleave',schedulePreviewClose);if(key==='food')b.id='foodService';box.append(b)}}
+function formatTime(s){return new Intl.DateTimeFormat(({hr:'hr-HR',it:'it-IT',sl:'sl-SI',de:'de-DE',cs:'cs-CZ',pl:'pl-PL',sk:'sk-SK',hu:'hu-HU',fr:'fr-FR',es:'es-ES',ch:'de-CH',at:'de-AT'})[lang]||'hr-HR',{weekday:'short',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(s))}
+function renderWeather(){if(!forecast)return;let cur=forecast.current, h=forecast.hourly;let [symbol,key]=iconText(cur.weather_code);$('weatherNow').replaceChildren();let big=document.createElement('div');big.className='temp';big.textContent=`${symbol} ${Math.round(cur.temperature_2m)}°C`;let desc=document.createElement('div');desc.textContent=`${tr(key)} · 💨 ${Math.round(cur.wind_speed_10m)} km/h`;let now=document.createElement('div');now.className='status';now.textContent=`${tr('updated')}: ${formatTime(cur.time)}`;$('weatherNow').append(big,desc,now);
+let next=h.time.map((x,i)=>i).filter(i=>new Date(h.time[i])>=new Date(cur.time)).slice(0,12);let wet=next.some(i=>h.precipitation_probability[i]>=55||h.precipitation[i]>=1),wind=next.some(i=>h.wind_speed_10m[i]>=35);$('weatherAdvice').textContent=wet?tr('rainAdvice'):wind?tr('windAdvice'):tr('sun');$('weatherStatus').textContent=tr('region')+' · Open-Meteo';}
+function show48(){if(!forecast){showModal(tr('details'),tr('unknown'));return}let table=document.createElement('table');table.className='hours';let head=document.createElement('thead');let hr=document.createElement('tr');for(let k of ['time','condition','temp','rain','wind']){let th=document.createElement('th');th.textContent=tr(k);hr.append(th)}head.append(hr);table.append(head);let body=document.createElement('tbody'),h=forecast.hourly;let shown=0;for(let i=0;i<h.time.length&&shown<48;i++){if(new Date(h.time[i])<new Date(forecast.current.time))continue;shown++;let row=document.createElement('tr');let [ico,key]=iconText(h.weather_code[i]);let values=[formatTime(h.time[i]),ico+' '+tr(key),Math.round(h.temperature_2m[i])+'°',h.precipitation_probability[i]+'%',Math.round(h.wind_speed_10m[i])];for(let v of values){let td=document.createElement('td');td.textContent=v;row.append(td)}body.append(row)}table.append(body);showModal(tr('details'),table)}
+function applyLang(){document.documentElement.lang=lang;renderFlags();document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>el.placeholder=tr(el.dataset.i18nPlaceholder));document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=tr(el.dataset.i18n));renderServices();if(forecast)renderWeather();if(document.body.classList.contains('food-open'))renderFoodView();$('hostName').textContent=HOST.name;$('hostInfo').textContent=HOST.info;$('hostContact').textContent=HOST.contact}
+$('receptionForm').onsubmit=e=>{e.preventDefault();const q=$('receptionQuestion').value.trim();if(!q)return;showModal(tr('reception'),tr('chatPreview'));};$('weatherDetails').onclick=show48;$('weatherIcon').onclick=show48;$('receptionIcon').onclick=() =>showModal(tr('reception'),tr('soon'));
+async function loadWeather(){try{const url='https://api.open-meteo.com/v1/forecast?latitude=45.431&longitude=13.523&current=temperature_2m,weather_code,wind_speed_10m&hourly=temperature_2m,precipitation_probability,precipitation,weather_code,wind_speed_10m&forecast_hours=48&timezone=Europe%2FZagreb';let response=await fetch(url);if(!response.ok)throw Error('HTTP '+response.status);forecast=await response.json();renderWeather()}catch(e){$('weatherNow').textContent=tr('unknown');$('weatherAdvice').textContent=tr('unknown');$('weatherStatus').textContent='Open-Meteo · connection unavailable';console.warn('Weather unavailable',e)}}
 
-const translations = {
-
-    hr: {
-        welcome: "Dobrodošli u Istru!",
-        description: "Otkrijte najljepše što Istra nudi. Vaš digitalni recepcionar dostupan je 24/7.",
-        weather: "Vrijeme",
-        food: "Restorani",
-        beaches: "Plaže",
-        activities: "Aktivnosti",
-        events: "Događanja",
-        culture: "Kultura",
-        local: "Vino i maslinovo ulje",
-        assistant: "Digitalni recepcionar"
-    },
-
-    it: {
-        welcome: "Benvenuti in Istria!",
-        description: "Scoprite il meglio dell'Istria. La vostra reception digitale è disponibile 24 ore su 24.",
-        weather: "Meteo",
-        food: "Ristoranti",
-        beaches: "Spiagge",
-        activities: "Attività",
-        events: "Eventi",
-        culture: "Cultura",
-        local: "Vino e olio d'oliva",
-        assistant: "Reception digitale"
-    },
-
-    en: {
-        welcome: "Welcome to Istria!",
-        description: "Discover the best of Istria. Your digital reception is available 24/7.",
-        weather: "Weather",
-        food: "Restaurants",
-        beaches: "Beaches",
-        activities: "Activities",
-        events: "Events",
-        culture: "Culture",
-        local: "Wine and olive oil",
-        assistant: "Digital receptionist"
-    },
-
-    de: {
-        welcome: "Willkommen in Istrien!",
-        description: "Entdecken Sie das Beste von Istrien. Ihre digitale Rezeption ist rund um die Uhr verfügbar.",
-        weather: "Wetter",
-        food: "Restaurants",
-        beaches: "Strände",
-        activities: "Aktivitäten",
-        events: "Veranstaltungen",
-        culture: "Kultur",
-        local: "Wein und Olivenöl",
-        assistant: "Digitale Rezeption"
-    },
-
-    sl: {
-        welcome: "Dobrodošli v Istri!",
-        description: "Odkrijte najlepše, kar ponuja Istra. Vaša digitalna recepcija je na voljo 24 ur na dan.",
-        weather: "Vreme",
-        food: "Restavracije",
-        beaches: "Plaže",
-        activities: "Aktivnosti",
-        events: "Dogodki",
-        culture: "Kultura",
-        local: "Vino in oljčno olje",
-        assistant: "Digitalna recepcija"
-    }
-
+// FOOD Pilot 3.2: only contact/address values cross-checked against linked sources.
+// Blank values are intentionally NOT fabricated. Images are intentionally neutral placeholders.
+const foodData={
+fish:{title:'RISTORANTI DI PESCE',emoji:'🐟',intro:'Una selezione iniziale di locali di Umago e dintorni con proposte di pesce e cucina di mare. La presenza nella prova non costituisce una recensione o una visita personale di TURistrIA.',rows:[
+{name:'Taverna Bifora',place:'Umag · Riječka 39',address:'Riječka ulica 39, Umag',phone:'+385959070039',desc:'Cucina di mare e specialità istriane sul lungomare.',source:'https://bifora.info/'},
+{name:'Fish & Grill Anton’s',place:'Umag · Nova Obala 8',address:'Nova Obala 8, Umag',phone:'+385921377353',desc:'Pesce, frutti di mare e piatti alla griglia.',source:'https://www.tripadvisor.com/Restaurant_Review-g608710-d23478840-Reviews-Fish_Grill_Anton_s-Umag_Istria.html'},
+{name:'Konoba Bonaca Punta',place:'Umag · Punta',address:'Konoba Bonaca Punta, Umag',phone:'+385916110942',desc:'Piatti di mare, pasta e cucina mediterranea.',source:'https://bonacapunta.com/menu.html'},
+{name:'Konoba Ma-Ni',place:'Umag',desc:'Locale da completare: indirizzo e contatto da ricontrollare.'},
+{name:'Konoba Kaleta',place:'Umag',desc:'Stato di apertura, indirizzo e telefono da ricontrollare prima dell’attivazione.'}
+]},
+meat:{title:'CARNE & GRILL',emoji:'🥩',intro:'Una raccolta pilota di locali con proposte di carne, grill e cucina dell’entroterra istriano. Sono elencati per scoperta, non in ordine di qualità.',rows:[
+{name:'Konoba Rustica',place:'Sveta Marija na Krasu 41',address:'Sv. Marija na Krasu 41, Umag',phone:'+38552732053',desc:'Specialità istriane e preparazioni di carne alla griglia.',source:'https://www.konoba-rustica.com/kontakt/'},
+{name:'Konoba Buščina',place:'Buščina 18',address:'Buščina 18, Umag',phone:'+38552732088',desc:'Cucina tradizionale, tartufi e piatti di carne istriana.',source:'https://konoba-buscina.hr/hr/contact/'},
+{name:'Batak Umag',place:'Miroslava Krleže 1',address:'Ulica Miroslava Krleže 1, Umag',phone:'+38552771475',desc:'Ristorante della catena Batak con offerta grill.',source:'https://batak-grill.hr/lokacije/'},
+{name:'Grill Dok',place:'Joakima Rakovca 13',address:'Joakima Rakovca 13, Umag',phone:'+38552751474',desc:'Grill e cucina informale; verificare il menu del giorno.',source:'https://restaurantguru.com/Dok-Umag'},
+{name:'Konoba Istria Grill & Fish',place:'Umag',desc:'Indirizzo e contatto da riconfermare prima dell’attivazione.'}
+]},
+pizza:{title:'PIZZERIE',emoji:'🍕',intro:'Pizzerie e locali che propongono pizza a Umago e dintorni. Stiamo completando la selezione senza aggiungere locali non identificati.',rows:[
+{name:'Buoni Amici in Piazza',place:'Trg slobode 2 · Umag',address:'Trg slobode 2, Umag',phone:'+38552722387',desc:'Pizzeria e cucina mediterranea in piazza.',source:'https://buoniamiciinpiazza.eatbu.hr/?lang=en'},
+{name:'Bistro-pizzeria Luna',place:'Umag',desc:'Pizzeria individuata: indirizzo e telefono da ricontrollare.'},
+{name:'Črni Pizza',place:'Umag',desc:'Pizzeria individuata: indirizzo e telefono da ricontrollare.'},
+{name:'Bistro-pizzeria Barka',place:'Stella Maris · Umag',desc:'Pizzeria individuata: indirizzo e telefono da ricontrollare.'},
+{name:'VAL Pizza-Grill',place:'Umag',desc:'Offerta pizza e grill; dati di contatto da ricontrollare.'}
+]},
+fast:{title:'FAST FOOD',emoji:'🍔',intro:'Proposte veloci: hamburger, panini, street food e piatti da asporto. Nella prova mostriamo solo i recapiti che siamo riusciti a riscontrare.',rows:[
+{name:'Snack Bar Garden',place:'Školska ulica 2 · Umag',address:'Školska ulica 2, Umag',phone:'+385996666161',desc:'Hamburger, panini e hot dog.',source:'https://www.tripadvisor.com/Restaurant_Review-g608710-d23293778-Reviews-Snack_Bar_Garden-Umag_Istria.html'},
+{name:'Fast Food Fredi',place:'Dante Alighieri 22 · Umag',address:'Dante 22, Umag',desc:'Fast food e proposte da asporto; numero telefonico da riconfermare.',source:'https://fast-food-fredi-umag.eatbu.hr/?lang=hr'},
+{name:'Sve je Domaće',place:'Savudrijska ulica 2 · Umag',address:'Savudrijska ulica 2, Umag',phone:'+385957341730',desc:'Burger e panini; indirizzo tratto dalla pagina attività aggiornata nel 2026.',source:'https://www.foodyas.com/HR/Umag/1967363836620354/Sve-je-Doma%C4%87e'},
+{name:'Street Food – Kebab & Burgers',place:'Umag',desc:'Locale individuato; indirizzo e numero da ricontrollare.'},
+{name:'King Kebap & Burgers',place:'Umag',desc:'Locale da riconfermare: contatti non ancora attivi.'}
+]}
 };
+let activeFoodCategory='fish';const homeMain=document.querySelector('main'),homeServices=$('services'),homeWeather=document.querySelector('.weather'),homeReception=document.querySelector('.reception');
+let previewCloseTimer=null;
+const desktopHover=()=>matchMedia('(hover:hover) and (pointer:fine)').matches;
+function cancelPreviewClose(){clearTimeout(previewCloseTimer);previewCloseTimer=null}
+function closeServicePreview(){$('servicePreview').hidden=true}
+function closeFoodPicker(){cancelPreviewClose();if($('foodPicker').open)$('foodPicker').close()}
+function closePreviews(){closeFoodPicker();closeServicePreview()}
+function schedulePreviewClose(){if(!desktopHover())return;cancelPreviewClose();previewCloseTimer=setTimeout(()=>{const el=document.activeElement;if($('foodPicker').contains(el)||$('servicePreview').contains(el))return;closePreviews()},220)}
+function placePreview(el,anchor){if(!anchor)return;const r=anchor.getBoundingClientRect(),w=el.getBoundingClientRect().width||535,h=el.getBoundingClientRect().height||360;let left=Math.max(12,Math.min(r.left+r.width/2-w/2,innerWidth-w-12));let top=r.bottom+8;if(top+h>innerHeight-10)top=Math.max(10,r.top-h-8);el.style.left=left+'px';el.style.top=top+'px'}
+function openFoodPicker(anchor){cancelPreviewClose();closeServicePreview();const d=$('foodPicker');if(!d.open)d.show();if(desktopHover() && (anchor||!document.body.classList.contains('food-open')))placePreview(d,anchor||$('foodService'));else if(desktopHover()){d.style.left=Math.max(12,(innerWidth-d.getBoundingClientRect().width)/2)+'px';d.style.top=Math.max(12,(innerHeight-d.getBoundingClientRect().height)/2)+'px'}}
+function openServicePreview(key,anchor){cancelPreviewClose();closeFoodPicker();const p=$('servicePreview');p.replaceChildren();const title=document.createElement('strong');title.textContent=tr(key);const desc=document.createElement('p');desc.textContent=tr('soon');p.append(title,desc);p.hidden=false;if(desktopHover())placePreview(p,anchor)}
+$('foodPicker').addEventListener('mouseenter',cancelPreviewClose);
+$('foodPicker').addEventListener('mouseleave',schedulePreviewClose);
+$('servicePreview').addEventListener('mouseenter',cancelPreviewClose);
+$('servicePreview').addEventListener('mouseleave',schedulePreviewClose);
+$('closeFoodPicker').onclick=closeFoodPicker;
+document.addEventListener('pointerdown',e=>{if(!$('foodPicker').contains(e.target)&&!e.target.closest('.service')&&!e.target.closest('#backCategories')&&!e.target.closest('#backFoodBottom')&&!$('servicePreview').contains(e.target))closePreviews()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePreviews()});
+for(const b of document.querySelectorAll('[data-category]'))b.onclick=()=>{const c=b.dataset.category;closeFoodPicker();showFood(c)};
+function showFood(c){closePreviews();activeFoodCategory=c;document.body.classList.add('food-open');$('foodView').hidden=false;$('foodAside').append(homeReception);renderFoodView();window.scrollTo({top:0,behavior:'instant'})}
+function closeFood(){document.body.classList.remove('food-open');$('foodView').hidden=true;homeMain.insertBefore(homeWeather,homeServices);homeMain.append(homeReception);window.scrollTo({top:0,behavior:'instant'})}
+$('backReception').onclick=closeFood;$('backCategories').onclick=openFoodPicker;$('backFoodBottom').onclick=openFoodPicker;
+function renderFoodView(){const data=foodData[activeFoodCategory];$('foodHeading').textContent=data.emoji+' '+data.title;$('foodIntro').textContent=data.intro;const box=$('foodCards');box.replaceChildren();for(const r of data.rows){let article=document.createElement('article');article.className='food-card';const title=document.createElement('div');title.className='food-title';let h=document.createElement('h3');h.textContent=r.name;let small=document.createElement('small');small.textContent=r.place||'Umag · dati da completare';title.append(h,small);const photo=document.createElement('div');photo.className='food-photo';photo.setAttribute('aria-label','Fotografia non ancora disponibile');photo.innerHTML='<div>'+data.emoji+'</div><span>Foto in preparazione</span>';const desc=document.createElement('p');desc.className='food-description';desc.textContent=r.desc;const map=document.createElement(r.address?'a':'span');map.className=r.address?'food-map':'no-action';map.textContent=r.address?'📍 Portami qui':'GPS da verificare';if(r.address){map.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(r.name+', '+r.address+', Croatia');map.target='_blank';map.rel='noopener noreferrer';map.setAttribute('aria-label','Cerca su Maps: '+r.name)}const phone=document.createElement(r.phone?'a':'span');phone.className=r.phone?'food-phone':'no-action';phone.textContent=r.phone?'☎ '+r.phone:'Telefono da verificare';if(r.phone)phone.href='tel:'+r.phone;const distance=document.createElement('div');distance.className='distance';distance.textContent='Distanza: —';let ds=document.createElement('small');ds.textContent='Alloggio pilota da impostare';distance.append(ds);article.append(title,photo,desc,map,phone,distance);box.append(article)}}
 
-function changeLanguage() {
 
-    const language = document.getElementById("language").value;
+// TURistrIA 3.2.1: full FOOD localization, direct category switching and offline flag icons.
+const FOOD_L={"it":{"fish":"PESCE","meat":"CARNE & GRILL","pizza":"PIZZERIE","fast":"FAST FOOD","picker":"Cosa ti piacerebbe mangiare?","pilot":"VERSIONE PILOTA · Alcuni dati sono ancora in verifica; non mostriamo contatti inventati.","back":"← Reception TURistrIA","categories":"☰ Categorie FOOD","bottom":"← Torna alle categorie FOOD","map":"📍 Portami qui","mapPending":"GPS da verificare","phonePending":"Telefono da verificare","distance":"Distanza: —","pilotHome":"Alloggio pilota da impostare","photo":"Foto in preparazione","placePending":"Umago · dati da completare","descFish":"Locale con proposte di pesce e cucina di mare; dettagli da confermare.","descMeat":"Locale con proposte di carne e grill; dettagli da confermare.","descPizza":"Locale con proposte di pizza; dettagli da confermare.","descFast":"Locale con proposte veloci o da asporto; dettagli da confermare.","introFish":"Una selezione pilota di locali di Umago e dintorni con proposte di pesce. La presenza non costituisce una recensione o una visita personale di TURistrIA.","introMeat":"Una selezione pilota di locali di Umago e dintorni con proposte di carne e grill. Non è una classifica di qualità.","introPizza":"Pizzerie e locali con pizza a Umago e dintorni; la selezione è in corso di verifica.","introFast":"Proposte veloci a Umago e dintorni; mostriamo solo i contatti verificati.","kicker":"UMAGO E DINTORNI"},"en":{"fish":"SEAFOOD","meat":"MEAT & GRILL","pizza":"PIZZERIAS","fast":"FAST FOOD","picker":"What would you like to eat?","pilot":"PILOT VERSION · Some details are being checked; we do not display invented contact details.","back":"← TURistrIA reception","categories":"☰ FOOD categories","bottom":"← Back to FOOD categories","map":"📍 Take me there","mapPending":"GPS to be checked","phonePending":"Phone to be checked","distance":"Distance: —","pilotHome":"Pilot accommodation not set","photo":"Photo coming soon","placePending":"Umag · details pending","descFish":"Seafood venue; further details to be confirmed.","descMeat":"Meat and grill venue; further details to be confirmed.","descPizza":"Pizza venue; further details to be confirmed.","descFast":"Quick bites or takeaway; further details to be confirmed.","introFish":"A pilot selection of seafood venues in and around Umag. Inclusion is not a review or a claim that TURistrIA has visited.","introMeat":"A pilot selection of meat and grill venues in and around Umag. This is not a quality ranking.","introPizza":"Pizzerias and venues serving pizza in and around Umag; details are being checked.","introFast":"Quick bites in and around Umag; only checked contacts are displayed.","kicker":"UMAG AND SURROUNDINGS"},"hr":{"fish":"RIBA","meat":"MESO I GRILL","pizza":"PIZZERIE","fast":"BRZA HRANA","picker":"Što biste željeli jesti?","pilot":"PILOT VERZIJA · Neki se podaci provjeravaju; ne prikazujemo izmišljene kontakte.","back":"← Recepcija TURistrIA","categories":"☰ FOOD kategorije","bottom":"← Natrag na FOOD kategorije","map":"📍 Odvedi me tamo","mapPending":"GPS treba provjeriti","phonePending":"Telefon treba provjeriti","distance":"Udaljenost: —","pilotHome":"Probni smještaj nije postavljen","photo":"Fotografija u pripremi","placePending":"Umag · podaci u pripremi","descFish":"Lokal s ribljim jelima; detalje treba potvrditi.","descMeat":"Lokal s mesnim jelima i roštiljem; detalje treba potvrditi.","descPizza":"Lokal s ponudom pizze; detalje treba potvrditi.","descFast":"Brza hrana ili jela za van; detalje treba potvrditi.","introFish":"Probni izbor lokala s ribljim jelima u Umagu i okolici. Uvrštavanje nije recenzija niti tvrdnja da je TURistrIA posjetila lokal.","introMeat":"Probni izbor lokala s mesom i roštiljem u Umagu i okolici. Ovo nije ljestvica kvalitete.","introPizza":"Pizzerije i lokali s pizzom u Umagu i okolici; podaci se provjeravaju.","introFast":"Brza hrana u Umagu i okolici; prikazujemo samo provjerene kontakte.","kicker":"UMAG I OKOLICA"},"sl":{"fish":"RIBE","meat":"MESO IN ŽAR","pizza":"PICERIJE","fast":"HITRA HRANA","picker":"Kaj bi radi jedli?","pilot":"PILOTNA RAZLIČICA · Nekateri podatki se preverjajo; izmišljenih kontaktov ne prikazujemo.","back":"← Recepcija TURistrIA","categories":"☰ Kategorije FOOD","bottom":"← Nazaj na kategorije FOOD","map":"📍 Pelji me tja","mapPending":"GPS je treba preveriti","phonePending":"Telefon je treba preveriti","distance":"Razdalja: —","pilotHome":"Poskusna nastanitev ni nastavljena","photo":"Fotografija v pripravi","placePending":"Umag · podatki v pripravi","descFish":"Lokal z ribjimi jedmi; podrobnosti še preverjamo.","descMeat":"Lokal z mesom in jedmi z žara; podrobnosti še preverjamo.","descPizza":"Lokal s pico; podrobnosti še preverjamo.","descFast":"Hitra hrana ali hrana za s seboj; podrobnosti še preverjamo.","introFish":"Poskusni izbor ribjih restavracij v Umagu in okolici. Uvrstitev ni ocena ali trditev o osebnem obisku TURistrIA.","introMeat":"Poskusni izbor lokalov z mesom in žarom v Umagu in okolici. To ni lestvica kakovosti.","introPizza":"Picerije in lokali s pico v Umagu in okolici; podatke preverjamo.","introFast":"Hitra hrana v Umagu in okolici; prikazani so le preverjeni kontakti.","kicker":"UMAG IN OKOLICA"},"de":{"fish":"FISCH","meat":"FLEISCH & GRILL","pizza":"PIZZERIA","fast":"FAST FOOD","picker":"Was möchten Sie essen?","pilot":"PILOTVERSION · Einige Angaben werden noch geprüft; wir zeigen keine erfundenen Kontaktdaten.","back":"← TURistrIA Rezeption","categories":"☰ FOOD-Kategorien","bottom":"← Zurück zu den FOOD-Kategorien","map":"📍 Route anzeigen","mapPending":"GPS wird geprüft","phonePending":"Telefon wird geprüft","distance":"Entfernung: —","pilotHome":"Testunterkunft noch nicht festgelegt","photo":"Foto in Vorbereitung","placePending":"Umag · Angaben folgen","descFish":"Lokal mit Fischgerichten; weitere Angaben werden geprüft.","descMeat":"Lokal mit Fleisch und Grillgerichten; weitere Angaben werden geprüft.","descPizza":"Lokal mit Pizza; weitere Angaben werden geprüft.","descFast":"Schnelle Gerichte oder zum Mitnehmen; weitere Angaben werden geprüft.","introFish":"Eine Pilot-Auswahl von Fischlokalen in und um Umag. Die Aufnahme ist keine Bewertung und bedeutet keinen persönlichen Besuch durch TURistrIA.","introMeat":"Eine Pilot-Auswahl von Fleisch- und Grilllokalen in und um Umag. Keine Qualitätsrangliste.","introPizza":"Pizzerien und Lokale mit Pizza in und um Umag; Angaben werden geprüft.","introFast":"Schnelle Gerichte in und um Umag; nur geprüfte Kontakte werden angezeigt.","kicker":"UMAG UND UMGEBUNG"},"cs":{"fish":"RYBY","meat":"MASO A GRIL","pizza":"PIZZERIE","fast":"RYCHLÉ OBČERSTVENÍ","picker":"Na co máte chuť?","pilot":"PILOTNÍ VERZE · Některé údaje ověřujeme; nevymýšlíme kontakty.","back":"← Recepce TURistrIA","categories":"☰ Kategorie FOOD","bottom":"← Zpět na kategorie FOOD","map":"📍 Navigovat","mapPending":"GPS se ověřuje","phonePending":"Telefon se ověřuje","distance":"Vzdálenost: —","pilotHome":"Testovací ubytování není nastaveno","photo":"Fotografie se připravuje","placePending":"Umag · údaje se doplňují","descFish":"Podnik s rybími pokrmy; podrobnosti ověřujeme.","descMeat":"Podnik s masem a grilem; podrobnosti ověřujeme.","descPizza":"Podnik s pizzou; podrobnosti ověřujeme.","descFast":"Rychlé občerstvení či jídlo s sebou; podrobnosti ověřujeme.","introFish":"Pilotní výběr rybích restaurací v Umagu a okolí. Zařazení není recenze ani potvrzení osobní návštěvy TURistrIA.","introMeat":"Pilotní výběr podniků s masem a grilem v Umagu a okolí. Nejde o žebříček kvality.","introPizza":"Pizzerie a podniky s pizzou v Umagu a okolí; údaje ověřujeme.","introFast":"Rychlé občerstvení v Umagu a okolí; uvádíme jen ověřené kontakty.","kicker":"UMAG A OKOLÍ"},"pl":{"fish":"RYBY","meat":"MIĘSO I GRILL","pizza":"PIZZERIE","fast":"FAST FOOD","picker":"Na co masz ochotę?","pilot":"WERSJA TESTOWA · Część danych jest sprawdzana; nie podajemy zmyślonych kontaktów.","back":"← Recepcja TURistrIA","categories":"☰ Kategorie FOOD","bottom":"← Wróć do kategorii FOOD","map":"📍 Prowadź do celu","mapPending":"GPS do sprawdzenia","phonePending":"Telefon do sprawdzenia","distance":"Odległość: —","pilotHome":"Obiekt testowy nieustawiony","photo":"Zdjęcie w przygotowaniu","placePending":"Umag · dane w przygotowaniu","descFish":"Lokal z daniami rybnymi; szczegóły do potwierdzenia.","descMeat":"Lokal z mięsem i grillem; szczegóły do potwierdzenia.","descPizza":"Lokal serwujący pizzę; szczegóły do potwierdzenia.","descFast":"Szybkie dania lub na wynos; szczegóły do potwierdzenia.","introFish":"Testowy wybór lokali rybnych w Umagu i okolicy. Obecność nie jest recenzją ani potwierdzeniem wizyty TURistrIA.","introMeat":"Testowy wybór lokali z mięsem i grillem w Umagu i okolicy. To nie ranking jakości.","introPizza":"Pizzerie i lokale z pizzą w Umagu i okolicy; dane są sprawdzane.","introFast":"Szybkie jedzenie w Umagu i okolicy; podajemy tylko sprawdzone kontakty.","kicker":"UMAG I OKOLICE"},"sk":{"fish":"RYBY","meat":"MÄSO A GRIL","pizza":"PIZZÉRIE","fast":"RÝCHLE OBČERSTVENIE","picker":"Na čo máte chuť?","pilot":"PILOTNÁ VERZIA · Niektoré údaje overujeme; nevymýšľame kontakty.","back":"← Recepcia TURistrIA","categories":"☰ Kategórie FOOD","bottom":"← Späť na kategórie FOOD","map":"📍 Navigovať","mapPending":"GPS sa overuje","phonePending":"Telefón sa overuje","distance":"Vzdialenosť: —","pilotHome":"Testovacie ubytovanie nie je nastavené","photo":"Fotografia sa pripravuje","placePending":"Umag · údaje sa dopĺňajú","descFish":"Podnik s rybími jedlami; podrobnosti overujeme.","descMeat":"Podnik s mäsom a grilom; podrobnosti overujeme.","descPizza":"Podnik s pizzou; podrobnosti overujeme.","descFast":"Rýchle jedlo alebo so sebou; podrobnosti overujeme.","introFish":"Pilotný výber rybích podnikov v Umagu a okolí. Zaradenie nie je recenzia ani potvrdenie návštevy TURistrIA.","introMeat":"Pilotný výber podnikov s mäsom a grilom v Umagu a okolí. Nie je to rebríček kvality.","introPizza":"Pizzérie a podniky s pizzou v Umagu a okolí; údaje overujeme.","introFast":"Rýchle občerstvenie v Umagu a okolí; zobrazujeme len overené kontakty.","kicker":"UMAG A OKOLIE"},"hu":{"fish":"HAL","meat":"HÚS ÉS GRILL","pizza":"PIZZÉRIÁK","fast":"GYORSÉTTEREM","picker":"Mit szeretne enni?","pilot":"PRÓBAVERZIÓ · Egyes adatokat ellenőrzünk; nem közlünk kitalált elérhetőségeket.","back":"← TURistrIA recepció","categories":"☰ FOOD kategóriák","bottom":"← Vissza a FOOD kategóriákhoz","map":"📍 Útvonaltervezés","mapPending":"GPS ellenőrzés alatt","phonePending":"Telefon ellenőrzés alatt","distance":"Távolság: —","pilotHome":"Teszt szállás nincs beállítva","photo":"Fotó készül","placePending":"Umag · adatok előkészítés alatt","descFish":"Halételeket kínáló hely; a részletek ellenőrzés alatt.","descMeat":"Hús- és grillételeket kínáló hely; a részletek ellenőrzés alatt.","descPizza":"Pizzát kínáló hely; a részletek ellenőrzés alatt.","descFast":"Gyorsételek vagy elvitel; a részletek ellenőrzés alatt.","introFish":"Umag és környéke halas helyeinek próbalistája. A szereplés nem értékelés, és nem jelenti a TURistrIA személyes látogatását.","introMeat":"Umag és környéke húsos és grillhelyeinek próbalistája. Ez nem minőségi rangsor.","introPizza":"Pizzériák és pizzát kínáló helyek Umag környékén; az adatokat ellenőrizzük.","introFast":"Gyorsételek Umag környékén; csak ellenőrzött elérhetőségeket mutatunk.","kicker":"UMAG ÉS KÖRNYÉKE"},"fr":{"fish":"POISSON","meat":"VIANDE & GRILL","pizza":"PIZZERIAS","fast":"RESTAURATION RAPIDE","picker":"Que souhaitez-vous manger ?","pilot":"VERSION PILOTE · Certaines données sont en cours de vérification ; aucun contact inventé.","back":"← Réception TURistrIA","categories":"☰ Catégories FOOD","bottom":"← Retour aux catégories FOOD","map":"📍 Itinéraire","mapPending":"GPS à vérifier","phonePending":"Téléphone à vérifier","distance":"Distance : —","pilotHome":"Hébergement pilote non défini","photo":"Photo à venir","placePending":"Umag · informations à compléter","descFish":"Établissement proposant du poisson ; détails à confirmer.","descMeat":"Établissement proposant de la viande et des grillades ; détails à confirmer.","descPizza":"Établissement proposant des pizzas ; détails à confirmer.","descFast":"Restauration rapide ou à emporter ; détails à confirmer.","introFish":"Une sélection pilote d’adresses de poisson à Umag et aux alentours. Leur présence n’est ni un avis ni une preuve de visite par TURistrIA.","introMeat":"Une sélection pilote d’adresses de viande et grillades à Umag et aux alentours. Ce n’est pas un classement.","introPizza":"Pizzerias et établissements servant des pizzas à Umag et aux alentours ; données en cours de vérification.","introFast":"Restauration rapide à Umag et aux alentours ; seuls les contacts vérifiés sont affichés.","kicker":"UMAG ET ENVIRONS"},"es":{"fish":"PESCADO","meat":"CARNE Y PARRILLA","pizza":"PIZZERÍAS","fast":"COMIDA RÁPIDA","picker":"¿Qué te apetece comer?","pilot":"VERSIÓN PILOTO · Algunos datos están en revisión; no mostramos contactos inventados.","back":"← Recepción TURistrIA","categories":"☰ Categorías FOOD","bottom":"← Volver a categorías FOOD","map":"📍 Cómo llegar","mapPending":"GPS por verificar","phonePending":"Teléfono por verificar","distance":"Distancia: —","pilotHome":"Alojamiento piloto sin configurar","photo":"Foto próximamente","placePending":"Umag · datos pendientes","descFish":"Local con platos de pescado; detalles por confirmar.","descMeat":"Local con carne y parrilla; detalles por confirmar.","descPizza":"Local con pizza; detalles por confirmar.","descFast":"Comida rápida o para llevar; detalles por confirmar.","introFish":"Una selección piloto de locales de pescado en Umag y alrededores. La inclusión no es una reseña ni implica visita de TURistrIA.","introMeat":"Una selección piloto de locales de carne y parrilla en Umag y alrededores. No es una clasificación de calidad.","introPizza":"Pizzerías y locales con pizza en Umag y alrededores; datos en revisión.","introFast":"Comida rápida en Umag y alrededores; solo mostramos contactos verificados.","kicker":"UMAG Y ALREDEDORES"}};
 
-    const text = translations[language];
+const FOOD_ILLUSTRATIVE={"it": "Immagine illustrativa", "hr": "Ilustrativna slika", "sl": "Ilustrativna slika", "en": "Illustrative image", "de": "Symbolbild", "cs": "Ilustrační obrázek", "pl": "Zdjęcie poglądowe", "sk": "Ilustračný obrázok", "hu": "Illusztráció", "fr": "Image illustrative", "es": "Imagen ilustrativa"};
+function foodText(key){const base=(lang==='ch'||lang==='at')?'de':(lang==='us'||lang==='gb')?'en':lang;return (FOOD_L[base]||FOOD_L.en)[key]||FOOD_L.en[key]||key}
+function renderFoodTabs(){const tabs=$('foodTabs');tabs.replaceChildren();for(const [key,emoji] of [['fish','🐟'],['meat','🥩'],['pizza','🍕'],['fast','🍔']]){const b=document.createElement('button');b.type='button';b.className='food-tab';b.textContent=emoji+' '+foodText(key);b.setAttribute('aria-current',key===activeFoodCategory?'page':'false');b.onclick=()=>showFood(key);tabs.append(b)}}
+function renderFoodView(){const data=foodData[activeFoodCategory];renderFoodTabs();$('foodHeading').textContent=data.emoji+' '+foodText(activeFoodCategory);$('foodIntro').textContent=foodText('intro'+activeFoodCategory[0].toUpperCase()+activeFoodCategory.slice(1));$('foodPickerTitle').textContent=foodText('picker');$('foodPilotNotice').textContent=foodText('pilot');$('backReception').textContent=foodText('back');$('backCategories').textContent=foodText('categories');$('backFoodBottom').textContent=foodText('bottom');document.querySelectorAll('[data-category]').forEach(b=>b.querySelector('span').textContent=foodText(b.dataset.category));document.querySelectorAll('.food-kicker').forEach(k=>{if(k.closest('.food-hero'))k.textContent='TURistrIA · FOOD · '+foodText('kicker')});$('closeFoodPicker').setAttribute('aria-label',lang==='it'?'Chiudi':lang==='hr'?'Zatvori':'Close');const box=$('foodCards');box.replaceChildren();for(const r of data.rows){const article=document.createElement('article');article.className='food-card';const title=document.createElement('div');title.className='food-title';const h=document.createElement('h3');h.textContent=r.name;const small=document.createElement('small');small.textContent=r.place||foodText('placePending');title.append(h,small);const photo=document.createElement('div');photo.className='food-photo';photo.setAttribute('aria-label',foodText('photo'));const art=document.createElement('img');art.src='assets/food-'+activeFoodCategory+'-art.jpg';art.alt='';art.loading='lazy';const photoLabel=document.createElement('span');photoLabel.textContent=FOOD_ILLUSTRATIVE[(lang==='ch'||lang==='at')?'de':(lang==='us'||lang==='gb')?'en':lang]||FOOD_ILLUSTRATIVE.en;photo.append(art,photoLabel);const desc=document.createElement('p');desc.className='food-description';const descKey='desc'+activeFoodCategory[0].toUpperCase()+activeFoodCategory.slice(1);desc.textContent=lang==='it'?r.desc:foodText(descKey);const map=document.createElement(r.address?'a':'span');map.className=r.address?'food-map':'no-action';map.textContent=r.address?foodText('map'):foodText('mapPending');if(r.address){map.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(r.name+', '+r.address+', Croatia');map.target='_blank';map.rel='noopener noreferrer';map.setAttribute('aria-label',foodText('map')+': '+r.name)}const phone=document.createElement(r.phone?'a':'span');phone.className=r.phone?'food-phone':'no-action';phone.textContent=r.phone?'☎ '+r.phone:foodText('phonePending');if(r.phone)phone.href='tel:'+r.phone;const distance=document.createElement('div');distance.className='distance';distance.textContent=foodText('distance');const ds=document.createElement('small');ds.textContent=foodText('pilotHome');distance.append(ds);article.append(title,photo,desc,map,phone,distance);box.append(article)}}
+const originalApplyLang=applyLang;applyLang=function(){originalApplyLang();renderFoodView();document.documentElement.lang=(lang==='us'||lang==='gb')?'en':(lang==='ch'||lang==='at')?'de':lang};
 
-    document.documentElement.lang = language;
-
-    for (const key in text) {
-
-        document.getElementById(key).textContent = text[key];
-
-    }
-
-}
-
-function openService(service) {
-
-    const language = document.getElementById("language").value;
-
-    const messages = {
-        hr: "Ova usluga uskoro će biti dostupna.",
-        it: "Questo servizio sarà presto disponibile.",
-        en: "This service will be available soon.",
-        de: "Dieser Service wird bald verfügbar sein.",
-        sl: "Ta storitev bo kmalu na voljo."
-    };
-
-    alert(messages[language]);
-
-}
-
-</script>
-
-</body>
-</html>
+applyLang();loadWeather();
+</script></body></html>
